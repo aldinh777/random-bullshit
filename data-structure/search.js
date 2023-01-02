@@ -1,11 +1,5 @@
 import { invert } from '../utils/math.js';
 
-/**
- * Check every items until item found
- * @param {T[]} array
- * @param {T} find
- * @returns {number}
- */
 export function bruteForceSearch(array, find) {
     for (let i = 0; i < array.length; i++) {
         if (array[i] === find) {
@@ -15,12 +9,6 @@ export function bruteForceSearch(array, find) {
     return invert(array.length);
 }
 
-/**
- * Check every items linearly, assuming array are sorted
- * @param {T[]} array
- * @param {T} find
- * @returns {number}
- */
 export function linearSearch(array, find) {
     for (let i = 0; i < array.length; i++) {
         if (array[i] >= find) {
@@ -34,12 +22,6 @@ export function linearSearch(array, find) {
     return invert(array.length);
 }
 
-/**
- * Slice array in half, slice it again, again and again until it find the value
- * @param {T[]} array
- * @param {T} find
- * @returns {number}
- */
 export function binarySearch(array, find) {
     let start = 0;
     let end = array.length - 1;
@@ -56,12 +38,6 @@ export function binarySearch(array, find) {
     return invert(start);
 }
 
-/**
- * Magically guess the expected index and slice array from there, over and over
- * @param {T[]} array
- * @param {T} find
- * @returns {number}
- */
 export function interpolationSearch(array, find) {
     let start = 0;
     let end = array.length - 1;

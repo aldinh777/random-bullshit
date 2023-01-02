@@ -1,9 +1,3 @@
-/**
- * Compare each items to ensure it was sorted
- * @param {string} name
- * @param {T[]} array
- * @param {(x: T, y: T) => boolean} sorter
- */
 export function sortedTest(name, array, sorter = (x, y) => x < y) {
     for (let i = 0; i < array.length - 1; i++) {
         if (!sorter(array[i], array[i + 1])) {
@@ -15,11 +9,6 @@ export function sortedTest(name, array, sorter = (x, y) => x < y) {
     console.log(name + ' : sorted');
 }
 
-/**
- * Run towards heaven and check how long it takes
- * @param {string} name
- * @param {() => any} callback
- */
 export function timedTest(name, callback) {
     const start = new Date();
     callback();

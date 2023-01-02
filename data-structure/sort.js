@@ -2,11 +2,6 @@ import { binarySearch } from './search.js';
 import { sensify } from '../utils/math.js';
 import { swapArray } from '../utils/array.js';
 
-/**
- * Bubble the largest value to the last index, one by one
- * @param {T[]} array
- * @returns {T[]}
- */
 export function bubbleSort(array) {
     for (let i = 0; i < array.length - 1; i++) {
         for (let j = 0; j < array.length - i; j++) {
@@ -18,11 +13,6 @@ export function bubbleSort(array) {
     return array;
 }
 
-/**
- * Select the smallest value and put it at first index
- * @param {T[]} array
- * @returns {T[]}
- */
 export function selectionSort(array) {
     for (let i = 0; i < array.length - 1; i++) {
         for (let j = i + 1; j < array.length; j++) {
@@ -34,12 +24,6 @@ export function selectionSort(array) {
     return array;
 }
 
-/**
- * Create new array and insert item accordingly
- * @param {T[]} array
- * @param {(array: T[], find: T) => number} search
- * @returns {T[]}
- */
 export function insertionSort(array, search = binarySearch) {
     const result = [];
     for (let i = 0; i < array.length; i++) {
@@ -48,11 +32,6 @@ export function insertionSort(array, search = binarySearch) {
     return result;
 }
 
-/**
- * Imagine sorting a tree instead of array
- * @param {T[]} array
- * @returns {T[]}
- */
 export function heapSort(array) {
     const hippy = (i, range) => {
         let current = i;
@@ -91,13 +70,6 @@ export function heapSort(array) {
     return array;
 }
 
-/**
- * Let's just slice the array to make it easier to sort
- * @param {T[]} array
- * @param {number} start
- * @param {number} end
- * @returns {T[]}
- */
 export function mergeSort(array, start = 0, end = array.length - 1) {
     if (end - start < 1) {
         return array;
@@ -125,13 +97,6 @@ export function mergeSort(array, start = 0, end = array.length - 1) {
     return array;
 }
 
-/**
- * It's like merge sort but usually faster
- * @param {T[]} array
- * @param {number} start
- * @param {number} end
- * @returns {T[]}
- */
 export function quickSort(array, start = 0, end = array.length - 1) {
     if (end - start < 1) {
         return array;
